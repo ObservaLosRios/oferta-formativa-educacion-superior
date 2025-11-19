@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta formativa: Universidades e Institutos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Principal -->
+    <header class="main-header">
+        <div class="logos-container">
+            <img src="thumbnail_Logo observa.png" alt="Universidad Austral de Chile - Centro de Estudios Regionales" class="header-logo-left">
+            <img src="thumbnail_images.png" alt="Logo Región" class="header-logo">
+        </div>
+        <div class="header-content">
+            <h1 class="main-title" id="main-title">Oferta formativa: universidades e institutos de educación superior</h1>
+            <p class="subtitle" id="subtitle">Universidad Austral de Chile - Centro de Estudios Regionales</p>
+        </div>
+    </header>
+    
+    <!-- Navegación -->
+    <nav class="nav-container">
+        <div class="nav-links" id="nav-links">
+            <a class="nav-link active" href="#vacantes-instituciones" data-section="vacantes-instituciones">Vacantes por institución</a>
+            <a class="nav-link" href="#detalle-carreras" data-section="detalle-carreras">Carreras por institución</a>
+            <a class="nav-link" href="#niveles-academicos" data-section="niveles-academicos">Distribución por nivel</a>
+            <a class="nav-link" href="#modalidad-jornada" data-section="modalidad-jornada">Modalidad y jornada</a>
+            <a class="nav-link" href="#costos-medianos" data-section="costos-medianos">Costos medianos</a>
+        </div>
+    </nav>
+    
+    <!-- Container Principal -->
+    <div class="container">
+        <!-- Secciones dinámicas se generarán aquí -->
+        <section id="vacantes-instituciones" class="section active">
+            <h2 class="section-title">Vacantes totales por institución</h2>
+            <p class="section-description">
+                Comparativo horizontal que ordena las instituciones de la Región de Los Ríos por su capacidad total de admisión.
+                Resalta rápidamente qué IES concentra la oferta de vacantes y facilita presentaciones ejecutivas.
+            </p>
+            <div class="chart-section">
+                <iframe
+                    class="viz-frame"
+                    data-frame-id="vacantes-institucion"
+                    data-auto-height="true"
+                    data-min-height="600"
+                    src="vacantes_por_institucion_highcharts.html"
+                    title="Vacantes totales por institución"
+                    loading="lazy"
+                ></iframe>
+            </div>
+        </section>
+
+        <section id="detalle-carreras" class="section">
+            <h2 class="section-title">Carreras dentro de cada institución</h2>
+            <p class="section-description">
+                Selector interactivo con todas las universidades e institutos de la región. Al elegir una institución,
+                se despliega su catálogo completo de carreras con las vacantes asociadas y un resumen ejecutivo.
+            </p>
+            <div class="chart-section">
+                <iframe
+                    class="viz-frame"
+                    data-frame-id="carreras-por-ies"
+                    data-auto-height="true"
+                    data-min-height="640"
+                    src="carreras_por_ies_highcharts.html"
+                    title="Detalle de carreras por institución"
+                    loading="lazy"
+                ></iframe>
+            </div>
+        </section>
+
+        <section id="niveles-academicos" class="section">
+            <h2 class="section-title">Vacantes por nivel académico</h2>
+            <p class="section-description">
+                Este gráfico de barras resume la oferta de vacantes en pregrado, programas técnicos y posgrados,
+                mostrando dónde se concentra la capacidad disponible dentro de la región.
+            </p>
+            <div class="chart-section">
+                <iframe
+                    class="viz-frame"
+                    data-frame-id="niveles-academicos"
+                    data-auto-height="true"
+                    data-min-height="520"
+                    src="niveles_por_vacantes_highcharts.html"
+                    title="Vacantes por nivel académico"
+                    loading="lazy"
+                ></iframe>
+            </div>
+        </section>
+
+        <section id="modalidad-jornada" class="section">
+            <h2 class="section-title">Vacantes por modalidad y jornada</h2>
+            <p class="section-description">
+                Visualización apilada que cruza modalidad y jornada para entender cuánto oferta se destina a formatos
+                diurnos, vespertinos o flexibles; útil para discutir cobertura territorial y opciones laborales.
+            </p>
+            <div class="chart-section">
+                <iframe
+                    class="viz-frame"
+                    data-frame-id="modalidad-jornada"
+                    data-auto-height="true"
+                    data-min-height="540"
+                    src="modalidad_jornada_highcharts.html"
+                    title="Vacantes por modalidad y jornada"
+                    loading="lazy"
+                ></iframe>
+            </div>
+        </section>
+
+        <section id="costos-medianos" class="section">
+            <h2 class="section-title">Arancel y matrícula medianos</h2>
+            <p class="section-description">
+                Línea doble inspirada en el estilo "Solar Employment Growth" que compara aranceles y matrículas medianas
+                por institución, destacando brechas de precio y posicionamientos relativos.
+            </p>
+            <div class="chart-section">
+                <iframe
+                    class="viz-frame"
+                    data-frame-id="costos-medianos"
+                    data-auto-height="true"
+                    data-min-height="520"
+                    src="costos_medianos_scatter_highcharts.html"
+                    title="Arancel y matrícula medianos por institución"
+                    loading="lazy"
+                ></iframe>
+            </div>
+        </section>
+
+        <div id="dynamic-sections"></div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text" id="footer-text">
+            Desarrollado con Plantilla de Visualización<br>
+            Universidad Austral de Chile - Centro de Estudios Regionales
+        </p>
+        <img src="thumbnail_logo cer.png" alt="Universidad Austral de Chile - Centro de Estudios Regionales" class="footer-logo">
+    </footer>
+
+    <script src="interactive.js"></script>
+</body>
+</html>

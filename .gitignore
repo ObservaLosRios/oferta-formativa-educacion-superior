@@ -1,0 +1,16 @@
+# Environment
+.venv/
+.env
+__pycache__/
+*.pyc
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Data/cache outputs (retain curated datasets under data/processed if needed)
+data/raw/*
+!data/raw/.gitkeep

@@ -1,0 +1,2 @@
+[console_scripts]
+oferta-formativa-etl = oferta_formativa_etl.cli:main

@@ -1,0 +1,146 @@
+project:
+  name: oferta_formativa_etl
+  description: ETL pipeline for Oferta Formativa Chile 2025 dataset
+
+paths:
+  raw_offers: data/raw/oferta_formativa_chile_2025.csv
+  processed_dir: data/processed
+  docs_dir: docs/reports
+
+etl:
+  clean_output: oferta_formativa_clean.parquet
+  summary_output: oferta_formativa_summary.csv
+  months_per_year: 12
+  filter_vigencia: Vigente con estudiantes nuevos
+
+currency:
+  default_format: Monto en Pesos
+  uf_to_clp: 37000
+
+columns:
+  keep:
+    - Año
+    - Código Único
+    - Tipo Institución 1
+    - Región Sede
+    - Provincia Sede
+    - Comuna Sede
+    - Área del conocimiento
+    - Cine-F 97 Área
+    - Cine-F 97 Subárea
+    - Cine-F 13 Área
+    - Cine-F 13 Subárea
+    - Nombre IES
+    - Nombre Sede
+    - Código Carrera
+    - Nombre Carrera
+    - Modalidad
+    - Jornada
+    - Tipo Carrera
+    - Plan Especial
+    - Duración Estudios
+    - Duración Titulación
+    - Duración Total
+    - Régimen
+    - Duración formal del Régimen
+    - Nombre Título
+    - Grado Académico
+    - Nivel Global
+    - Nivel Carrera
+    - Demre
+    - Año Inicio
+    - Acreditación Carrera o Programa
+    - Elegibilidad Beca Pedagogía
+    - "Pedagogía Medicina Odontología, Otro"
+    - Requisito Ingreso
+    - Área Dest Educación
+    - Área Dest Humanidades y Artes
+    - Área Dest Ing Ind Const
+    - Área Dest Salud y Serv Soc
+    - Área Dest Servicios
+    - Ponderación Notas
+    - Ponderación Ranking Notas
+    - Ponderación Lenguaje
+    - Ponderación Matemáticas
+    - Ponderación Ciencias
+    - Vacantes Semestre Uno
+    - Vacantes Semestre Dos
+    - Formato Valor
+    - Matrícula Anual
+    - Costo Titulación
+    - Costo Certificado Diploma
+    - Arancel Anual
+    - Vigencia
+  rename_map:
+    Año: anio
+    Código Único: codigo_unico
+    Tipo Institución 1: tipo_institucion
+    Región Sede: region_sede
+    Provincia Sede: provincia_sede
+    Comuna Sede: comuna_sede
+    Área del conocimiento: area_conocimiento
+    "Cine-F 97 Área": cine97_area
+    "Cine-F 97 Subárea": cine97_subarea
+    "Cine-F 13 Área": cine13_area
+    "Cine-F 13 Subárea": cine13_subarea
+    Nombre IES: nombre_ies
+    Nombre Sede: nombre_sede
+    Código Carrera: codigo_carrera
+    Nombre Carrera: nombre_carrera
+    Modalidad: modalidad
+    Jornada: jornada
+    Tipo Carrera: tipo_carrera
+    Plan Especial: plan_especial
+    Duración Estudios: duracion_estudios
+    Duración Titulación: duracion_titulacion
+    Duración Total: duracion_total
+    Régimen: regimen
+    Duración formal del Régimen: duracion_formal_regimen
+    Nombre Título: nombre_titulo
+    Grado Académico: grado_academico
+    Nivel Global: nivel_global
+    Nivel Carrera: nivel_carrera
+    Demre: demre
+    Año Inicio: anio_inicio
+    Acreditación Carrera o Programa: acreditacion
+    Elegibilidad Beca Pedagogía: elegibilidad_beca_pedagogia
+    "Pedagogía Medicina Odontología, Otro": clasificacion_pedagogia_salud
+    Requisito Ingreso: requisito_ingreso
+    Área Dest Educación: destino_educacion
+    Área Dest Humanidades y Artes: destino_humanidades_artes
+    Área Dest Ing Ind Const: destino_ingenieria_industria
+    Área Dest Salud y Serv Soc: destino_salud_servicios
+    Área Dest Servicios: destino_servicios
+    Ponderación Notas: ponderacion_notas
+    Ponderación Ranking Notas: ponderacion_ranking
+    Ponderación Lenguaje: ponderacion_lenguaje
+    Ponderación Matemáticas: ponderacion_matematicas
+    Ponderación Ciencias: ponderacion_ciencias
+    Vacantes Semestre Uno: vacantes_semestre_uno
+    Vacantes Semestre Dos: vacantes_semestre_dos
+    Formato Valor: formato_valor
+    Matrícula Anual: matricula_anual
+    Costo Titulación: costo_titulacion
+    Costo Certificado Diploma: costo_certificado
+    Arancel Anual: arancel_anual
+    Vigencia: vigencia
+  integer:
+    - vacantes_semestre_uno
+    - vacantes_semestre_dos
+    - duracion_estudios
+    - duracion_titulacion
+    - duracion_total
+    - duracion_formal_regimen
+    - anio
+    - anio_inicio
+    - demre
+  currency:
+    - matricula_anual
+    - costo_titulacion
+    - costo_certificado
+    - arancel_anual
+
+report:
+  summary_group_keys:
+    - region_sede
+    - area_conocimiento

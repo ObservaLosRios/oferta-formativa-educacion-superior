@@ -1,0 +1,17 @@
+pyproject.toml
+src/oferta_formativa_etl/__init__.py
+src/oferta_formativa_etl/cli.py
+src/oferta_formativa_etl/pipeline.py
+src/oferta_formativa_etl.egg-info/PKG-INFO
+src/oferta_formativa_etl.egg-info/SOURCES.txt
+src/oferta_formativa_etl.egg-info/dependency_links.txt
+src/oferta_formativa_etl.egg-info/entry_points.txt
+src/oferta_formativa_etl.egg-info/requires.txt
+src/oferta_formativa_etl.egg-info/top_level.txt
+src/oferta_formativa_etl/config/loader.py
+src/oferta_formativa_etl/config/models.py
+src/oferta_formativa_etl/extractors/base.py
+src/oferta_formativa_etl/loaders/dataframe_loader.py
+src/oferta_formativa_etl/transformers/base.py
+src/oferta_formativa_etl/transformers/offer_transformer.py
+tests/test_offer_transformer.py

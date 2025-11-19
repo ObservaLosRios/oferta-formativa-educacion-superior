@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: oferta-formativa-etl
+Version: 0.1.0
+Summary: ETL pipeline for the Oferta Formativa Chile 2025 dataset
+Author: Bruno San Martin Navarro
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=2.2
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: typer>=0.12
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
