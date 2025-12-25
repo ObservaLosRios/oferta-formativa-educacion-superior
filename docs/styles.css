@@ -206,10 +206,6 @@ body {
     background: #ffffff;
 }
 
-.viz-frame[data-auto-height="true"] {
-    min-height: 0;
-}
-
 @media (max-width: 768px) {
     .viz-frame {
         min-height: 520px;
